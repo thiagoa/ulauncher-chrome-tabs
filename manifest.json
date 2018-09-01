@@ -12,7 +12,7 @@
         "id": "kw",
         "type": "keyword",
         "name": "Chrome Tabs",
-        "description": "Chrome tabs extension",
+        "description": "Open your Chrome Tabs",
         "default_value": "tabs"
     }]
 }

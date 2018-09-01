@@ -62,10 +62,6 @@ sh install_host.sh
 
 * Due to the asyncronous nature of the application, tabs will be refreshed every 30s. It seems a reasonable value but it might be reduced if needed.
 
-## Troubleshooting
-
-Coming soon.
-
 ## Development
 
 ```
