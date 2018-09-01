@@ -1,0 +1,83 @@
+#!/usr/bin/env python
+
+import struct
+import sys
+import logging
+import threading
+from websocket_server import WebsocketServer
+
+logging.basicConfig(filename='/tmp/ulauncher-host.log',
+                    format='[%(asctime)s] %(levelname)s [%(name)s.%(funcName)s:%(lineno)d] %(message)s',
+                    datefmt="%H:%M:%S",
+                    level=logging.DEBUG)
+
+
+def on_ws_new_client(client, server):
+    """ Function called on new client """
+    logging.info("New client %s", client)
+
+
+def on_ws_message_received(client, server, message):
+    """ Callback executed when the websocket server receives a message """
+    logging.info("New websocket message received %s", message)
+    send_message(message)
+
+
+# Starts websocket server which Ulauncher will connect to.
+# TODO we cant have logging in stdout, otherwise it will break Native messaging.
+ws = WebsocketServer(10200, host='127.0.0.1',  loglevel=logging.FATAL)
+ws.set_fn_message_received(on_ws_message_received)
+ws.set_fn_new_client(on_ws_new_client)
+
+
+def send_message(message):
+    """ Sends a Message using Chrome native messaging API """
+
+    logging.info("Sending message to chrome %s" % message)
+
+    # Write message size.
+    sys.stdout.write(struct.pack('I', len(message)))
+
+    # Write the message itself.
+    sys.stdout.write(message)
+    sys.stdout.flush()
+
+
+def read_native_messaging():
+    """ Reads messages sent by Chrome Native API """
+    while True:
+        # Read the message length (first 4 bytes).
+        text_length_bytes = sys.stdin.read(4)
+
+        # Unpack message length as 4 byte integer.
+        text_length = struct.unpack('i', text_length_bytes)[0]
+
+        # Read the text (JSON object) of the message.
+        text = sys.stdin.read(text_length).decode('utf-8')
+
+        logging.info('Received message from Chrome: %s' %
+                     text)
+
+        ws.send_message_to_all(text)
+
+
+def main():
+    """ Listen to messages from the API """
+
+    try:
+        t = threading.Thread(target=ws.run_forever)
+        t.daemon = True
+        t.start()
+
+        read_native_messaging()
+    except KeyboardInterrupt as e:
+        sys.exit(0)
+    except SystemExit as e:
+        pass
+    except Exception as e:
+        logging.error(e)
+        sys.exit(1)
+
+
+if __name__ == '__main__':
+    main()

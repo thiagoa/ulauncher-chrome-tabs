@@ -1,0 +1,19 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ChromeTabsExtension	../main.py	/^class ChromeTabsExtension(Extension):$/;"	kind:class	line:11
+KeywordQueryEventListener	../main.py	/^class KeywordQueryEventListener(EventListener):$/;"	kind:class	line:20
+__init__	../main.py	/^    def __init__(self):$/;"	kind:member	line:14
+datefmt	../native_messaging/host	/^                    datefmt="%H:%M:%S",$/;"	kind:variable	line:11
+format	../native_messaging/host	/^                    format='[%(asctime)s] %(levelname)s [%(name)s.%(funcName)s:%(lineno)d] %(message)s',$/;"	kind:variable	line:10
+host	../native_messaging/host	1;"	kind:file	line:1
+level	../native_messaging/host	/^                    level=logging.DEBUG)$/;"	kind:variable	line:12
+main	../native_messaging/host	/^def main():$/;"	kind:function	line:58
+main.py	../main.py	1;"	kind:file	line:1
+on_event	../main.py	/^    def on_event(self, event, extension):$/;"	kind:member	line:23
+read_native_messaging	../native_messaging/host	/^def read_native_messaging():$/;"	kind:function	line:42
+send_message	../native_messaging/host	/^def send_message(message):$/;"	kind:function	line:31
+server	../native_messaging/host	/^server = WebsocketServer(13254, host='127.0.0.1')$/;"	kind:variable	line:28

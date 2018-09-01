@@ -1,0 +1,18 @@
+{
+  "name": "Ulauncher Tabs Helper",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Helper extension that allows ulauncher-tabs extension to communicate with Google Chrome. It uses nativeMessaging API.",
+  "background": {
+    "scripts": [
+      "main.js"
+    ]
+  },
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "permissions": [
+    "nativeMessaging",
+    "tabs"
+  ]
+}

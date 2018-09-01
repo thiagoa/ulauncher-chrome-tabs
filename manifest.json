@@ -1,0 +1,18 @@
+{
+    "manifest_version": "2",
+    "api_version": "1",
+    "name": "Chrome Tabs",
+    "description": "Open your Chrome tabs from Ulauncher",
+    "developer_name": "Bruno Paz",
+    "icon": "images/icon.png",
+    "options": {
+        "query_debounce": 0.2
+    },
+    "preferences": [{
+        "id": "kw",
+        "type": "keyword",
+        "name": "Chrome Tabs",
+        "description": "Chrome tabs extension",
+        "default_value": "tabs"
+    }]
+}

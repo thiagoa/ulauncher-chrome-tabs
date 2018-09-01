@@ -1,0 +1,9 @@
+{
+  "name": "net.brunopaz.ulauncher.tabs.extension",
+  "description": "Chrome Native Messaging API Connector for Ulauncher Chrome Tabs extension",
+  "path": "CHANGE ME",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://bkcokidmpkcahkenmephpjimclleigij/"
+  ]
+}
