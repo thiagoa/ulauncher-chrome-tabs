@@ -77,7 +77,7 @@ class ChromeTabsExtension(Extension):
         t.daemon = True
         t.start()
 
-    def on_ws_message(self, ws, message):
+    def on_ws_message(self, message):
         """ Function called when we receive a message from the websocket """
         LOGGER.info("Received message from websocket %s" % message)
 
@@ -113,11 +113,11 @@ class ChromeTabsExtension(Extension):
                                self.connect_to_websocket)
         time.start()
 
-    def on_ws_close(self, ws):
+    def on_ws_close(self):
         """ Callback function that fires when the socket connection is closed """
         LOGGER.info("Closed connection to websocket")
 
-    def on_ws_open(self, ws):
+    def on_ws_open(self):
         """ Callback when the websocket connection is opened """
         LOGGER.info("Opened websocket connection")
 
