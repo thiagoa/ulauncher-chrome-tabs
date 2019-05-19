@@ -5,7 +5,7 @@ set -e
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 TARGET_DIR="$HOME/.config/google-chrome/NativeMessagingHosts"
 
-HOST_NAME=net.brunopaz.ulauncher-tabs-extension
+HOST_NAME=net.brunopaz.ulauncher.tabs.extension
 
 # Create directory to store native messaging host.
 mkdir -p "$TARGET_DIR"
