@@ -26,13 +26,13 @@ This application consists of 3 parts:
 
 ## Install
 
-### 1 Install ulauncher extension
+### 1. Install ulauncher extension
 
 Open ulauncher preferences window -> extensions -> add extension and paste the following url:
 
 ```https://github.com/brpaz/ulauncher-chrome-tabs```
 
-### 1. Install Native messaging host manifest
+### 2. Install Native messaging host manifest
 
 This application located in "native_messaging" folder is required for native messaging to work. [Read this](https://developer.chrome.com/extensions/nativeMessaging#native-messaging-host) for technical details.
 
@@ -47,12 +47,12 @@ cd native_messaging
 sh install_host.sh
 ```
 
-### Install the Chrome extension.
+### 3. Install the Chrome extension.
 
 * Go to "chrome://extensions/" in your Chrome Browser.
 * Make sure "Developer mode" is on and click "Load unpacked". Then select the folder "chrome-ext" located in the root folder of the extension and load it.
 
-### Restart ulauncher
+### 4. Restart ulauncher
 
 * Finally restart ulauncher.
 * If everything went well you should be able to type "tabs" and see a list of your opened tabs. Clicking on an item, will activate the respective tab window.
