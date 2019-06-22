@@ -4,6 +4,6 @@
   "path": "CHANGE ME",
   "type": "stdio",
   "allowed_origins": [
-    "chrome-extension://bkcokidmpkcahkenmephpjimclleigij/"
+    "chrome-extension://CHANGE ME/"
   ]
 }
