@@ -16,11 +16,11 @@ This application consists of 3 parts:
 
 ## Requirements
 
-* [ulauncher](https://ulauncher.io/)
-* Python >= 2.7
+* [ulauncher](https://ulauncher.io/) >= 3
+* Python >= 3
 * Python packages:
-    * ```pip install websocket-client```
-    * ```pip install git+https://github.com/Pithikos/python-websocket-server```
+    * ```pip3 install websocket-client```
+    * ```pip3 install git+https://github.com/Pithikos/python-websocket-server```
 * Chrome Browser
 * Unusued port 10200. (this is the port that the native host application websocket server will listen on)
 

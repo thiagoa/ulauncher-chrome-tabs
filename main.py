@@ -147,8 +147,7 @@ class KeywordQueryEventListener(EventListener):
         else:
             for tab in tabs[:25]:
                 items.append(ExtensionSmallResultItem(icon='images/icon.png',
-                                                      name=tab['name'].encode(
-                                                          "utf-8"),
+                                                      name=tab['name'],
                                                       on_enter=ExtensionCustomAction(tab['id'])))
 
         return RenderResultListAction(items)
