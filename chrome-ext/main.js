@@ -63,7 +63,8 @@ function getTabs() {
  * @param {string} message
  */
 function onNativeMessage(message) {
-  console.log("Received message from native host ", message);
+  message = JSON.parse(message);
+  console.log("Received message from native host ", message.action);
 
   switch (message.action) {
     // Get list of tabs

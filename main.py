@@ -100,14 +100,14 @@ class ChromeTabsExtension(Extension):
             LOGGER.info(
                 "Message received from websocket was not in a valid format")
 
-    def on_ws_error(self, ws, error):
+    def on_ws_error(self, error):
         """ Callback when we receive an error from the websocket """
         LOGGER.error("Websocket connection error: %s" % error)
 
-        if ws is not None:
-            ws.close()
-            ws = None
-            del ws
+        if self.ws is not None:
+            self.ws.close()
+            self.ws = None
+            del self.ws
 
         time = threading.Timer(WEBSOCKET_RECONNECT_TIMER,
                                self.connect_to_websocket)
